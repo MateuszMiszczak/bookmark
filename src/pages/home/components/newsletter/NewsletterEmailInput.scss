@@ -1,0 +1,99 @@
+@import '.././../../../styles/variables.scss';
+
+.form {
+  display: flex;
+  gap: 0.9rem;
+  flex-direction: column;
+  width: 95%;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    border-radius: 5px;
+    position: relative;
+
+    &__input {
+      padding: 0.7rem 1.1rem;
+      width: 100%;
+
+      border: none;
+      border-radius: 4px;
+      text-align: start;
+
+      &::placeholder {
+        font-size: 14px;
+        color: $grayish;
+        opacity: 0.6;
+      }
+
+      @include breakpoint(md) {
+        padding: 0.7rem 2.2rem;
+      }
+    }
+
+    &__error {
+      display: flex;
+      text-align: start;
+      width: 93%;
+
+      &__message {
+        font-size: 10px;
+        letter-spacing: 1px;
+        font-style: italic;
+      }
+
+      &__icon {
+        width: 20px;
+        position: absolute;
+        top: 22%;
+        right: 5.5%;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__submit {
+    cursor: pointer;
+    background: $lightRed;
+    border: solid 2px $lightRed;
+    border-radius: 5px;
+    padding: 13.4px 0 13.4px 0;
+
+    color: $white;
+    opacity: 0.95;
+    font-weight: 500;
+    font-size: 14px;
+
+    transition: 0.15s all ease-in-out;
+
+    &:hover,
+    &:active {
+      background: $white;
+      color: $lightRed;
+    }
+
+    @include breakpoint(md) {
+      padding: 13.4px 1.5rem 13.4px 1.5rem;
+    }
+  }
+}
+
+.errorActive {
+  padding: 0.1rem 0.12rem 0.35rem 0.1rem;
+  background: $lightRed;
+}
+
+.moveTop {
+  @include breakpoint(md) {
+    transform: translateY(-0.6rem);
+  }
+}

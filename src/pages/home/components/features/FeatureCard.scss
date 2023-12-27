@@ -1,0 +1,247 @@
+@import '../../../../styles/variables.scss';
+
+.container {
+  &__tabs {
+    max-width: 200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4.3rem;
+
+    @include breakpoint(md) {
+      max-width: 740px;
+      flex-direction: row;
+    }
+
+    &__tab {
+      font-size: 16.5px;
+      letter-spacing: 0.15px;
+      font-weight: 500;
+      font-family: inherit;
+      background: #fff;
+      padding: 15px 15px;
+
+      border: none;
+      cursor: pointer;
+      border-bottom: 4px solid transparent;
+      position: relative;
+
+      @include breakpoint(md) {
+        padding: 1.55rem 3rem;
+      }
+
+      &:first-child {
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%, -50%);
+          width: 160%;
+          height: 16px;
+          border-top: 1px solid $grayLight;
+          pointer-events: none;
+          z-index: 1;
+
+          @include breakpoint(md) {
+            display: none;
+          }
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -56%);
+        width: 160%;
+        height: 65px;
+        border-bottom: 1px solid $grayLight;
+        pointer-events: none;
+
+        z-index: 1;
+
+        @include breakpoint(md) {
+          transform: translate(-50%, -35%);
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+
+        z-index: 1;
+      }
+
+      @include breakpoint(md) {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      & > div {
+        transition: 0.1s all ease-in-out;
+        display: block;
+        font-size: 16px;
+        color: $grayDarker;
+      }
+
+      &:hover > div {
+        color: $lightRed;
+      }
+    }
+
+    &__active {
+      position: relative;
+
+      @include breakpoint(md) {
+        border-bottom: 5px solid $lightRed;
+        padding: 1.6rem 3rem;
+        transform: translate(0, 1px);
+      }
+
+      & > div {
+        color: black;
+        position: relative;
+        width: 100%;
+
+        & > span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, 470%);
+          width: 85%;
+          height: 0.1px;
+          border-bottom: 5px solid $lightRed;
+
+          @include breakpoint(md) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    &__tab {
+      display: none;
+
+      &__active {
+        display: block;
+      }
+
+      &__inner {
+        display: grid;
+        gap: 3.5rem;
+        position: relative;
+
+        @include breakpoint(md) {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1rem;
+        }
+
+        &__image {
+          padding: 0 2rem;
+
+          transform: translate(0, 0);
+
+          @include breakpoint(md) {
+            width: 537px;
+            height: 300px;
+            transform: translate(32%, -10%);
+            padding: 0 0;
+          }
+        }
+
+        &__bubble {
+          position: absolute;
+          left: -1rem;
+          top: 1.85rem;
+
+          border-top-right-radius: 200px;
+          border-bottom-right-radius: 200px;
+
+          width: 85%;
+          height: 47.5%;
+          background: $lightBlue;
+          z-index: -1;
+
+          @include breakpoint(md) {
+            right: -10.5rem;
+            top: 1.65rem;
+
+            width: 670px;
+            height: 348px;
+          }
+        }
+
+        &__text {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          justify-content: center;
+          margin: 0 auto;
+
+          @include breakpoint(md) {
+            width: 70%;
+            gap: 1rem;
+          }
+
+          & > h2 {
+            font-weight: 500;
+            font-size: 24px;
+            text-align: center;
+
+            @include breakpoint(md) {
+              font-size: 32px;
+              text-align: start;
+            }
+          }
+
+          & > p {
+            width: 85%;
+            color: $grayish;
+            margin: 0 auto;
+            font-size: 15px;
+            line-height: 1.3rem;
+            text-align: center;
+
+            letter-spacing: 0.2px;
+
+            @include breakpoint(md) {
+              width: 100%;
+              font-size: 18px;
+              line-height: 1.5rem;
+              text-align: start;
+              margin-top: 0.4rem;
+              margin-bottom: 1rem;
+            }
+          }
+
+          & > button {
+            display: none;
+
+            @include breakpoint(md) {
+              cursor: pointer;
+              display: block;
+              width: fit-content;
+              padding: 15px 25px;
+              background: $lightBlue;
+              border-radius: 5px;
+              color: $white;
+              font-family: inherit;
+              font-weight: 400;
+              font-size: 14px;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import '../../../styles/variables.scss';
+
+.example {
+  display: grid;
+  justify-content: center;
+  margin-top: calc($headerHeight);
+}
