@@ -1,0 +1,132 @@
+@import '../../styles/variables.scss';
+
+.modal {
+  &__background {
+    position: fixed;
+    inset: 0;
+    background: $darkBlue;
+    opacity: 0.92;
+
+    z-index: 1000;
+  }
+
+  &__content {
+    position: fixed;
+    z-index: 1001;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: $white;
+
+    @include breakpoint(md) {
+      transform: translate(0, 0);
+      padding: 3rem;
+      inset: 9rem;
+      flex-direction: row;
+    }
+
+    &__children {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(md) {
+        gap: 5rem;
+      }
+
+      &__img {
+        width: 0;
+        @include breakpoint(md) {
+          width: 75%;
+        }
+      }
+
+      &__bubble {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        border-top-right-radius: 200px;
+        border-bottom-right-radius: 200px;
+
+        background: $lightBlue;
+        z-index: -1;
+
+        @include breakpoint(md) {
+          top: 8rem;
+
+          width: 490px;
+          height: 300px;
+        }
+      }
+
+      &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        justify-content: center;
+        margin: 0 auto;
+
+        @include breakpoint(md) {
+          gap: 1rem;
+          width: 70%;
+        }
+
+        & > h2 {
+          font-weight: 500;
+          font-size: 24px;
+          text-align: start;
+
+          @include breakpoint(md) {
+            font-size: 32px;
+            text-align: start;
+          }
+        }
+
+        & > p {
+          color: $grayish;
+          margin: 0 auto;
+          font-size: 15px;
+          line-height: 1.3rem;
+          text-align: start;
+
+          letter-spacing: 0.2px;
+
+          @include breakpoint(md) {
+            font-size: 18px;
+            line-height: 1.5rem;
+            text-align: start;
+            margin-top: 0.4rem;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    &__action {
+      &__button {
+        background: #5368df;
+        padding: 1rem;
+        border-radius: 50px;
+        border: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        transition: 0.2s all ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

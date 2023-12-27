@@ -1,0 +1,86 @@
+@import '../../styles/variables.scss';
+
+.footer {
+  background: $darkBlue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  padding-top: 2.4rem;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+    padding: 1.8rem 9rem 1.8rem 5rem;
+  }
+
+  &__container {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.1rem;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: start;
+
+      gap: 3.4rem;
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    &__li {
+      & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.9rem;
+
+        @include breakpoint(md) {
+          flex-direction: row;
+          gap: 2.2rem;
+        }
+
+        & a {
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $white;
+          opacity: 0.85;
+          font-size: 14px;
+          letter-spacing: 2px;
+          transition: 0.2s ease-in-out color;
+
+          @include breakpoint(md) {
+            font-size: 13px;
+          }
+
+          &:hover,
+          &:active {
+            color: $lightRed;
+          }
+        }
+      }
+    }
+  }
+
+  &__socials {
+    padding-top: 2.7rem;
+
+    @include breakpoint(md) {
+      padding-top: 0;
+    }
+  }
+}

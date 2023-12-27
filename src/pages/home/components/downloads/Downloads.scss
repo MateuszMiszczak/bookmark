@@ -1,0 +1,33 @@
+@import '../../../../styles/variables.scss';
+
+.downloads {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 8.5rem 0;
+
+  @include breakpoint(md) {
+    margin: 13rem 0;
+  }
+
+  &__text {
+    @include text-w80-flex-col-text-ce-mx-auto;
+
+    &__h2 {
+      @include h2-styling-mobile;
+      @include breakpoint(md) {
+        @include h2-styling-desktop;
+      }
+    }
+
+    &__p {
+      @include p-styling-mobile;
+      @include breakpoint(md) {
+        width: 60%;
+        margin: 0 auto;
+
+        @include p-styling-desktop;
+      }
+    }
+  }
+}

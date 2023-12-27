@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.social {
+  display: flex;
+  gap: 2.3rem;
+  align-items: center;
+  justify-content: center;
+
+  & > a {
+    cursor: pointer;
+
+    & > svg {
+      transition: 0.2s all ease-in-out;
+    }
+  }
+}
