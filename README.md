@@ -1,4 +1,4 @@
-# https://main--bookmarkmateuszmiszczak.netlify.app/
+# https://bookmarkmateuszmiszczak.netlify.app
 
 ## Layout
 
